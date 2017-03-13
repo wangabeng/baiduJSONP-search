@@ -1,0 +1,7 @@
+src address：
+
+https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=55&cb=abeng
+
+//content 
+
+abeng({q:"55",p:false,s:["55开","55海淘","55度杯官网","5566","55度杯","55开直播","5566网址大全设首页","555","55you","55you魔兽地图"]});

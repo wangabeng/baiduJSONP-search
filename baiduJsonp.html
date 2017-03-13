@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	#q {
+		width: 300px; 
+		height: 30px; 
+		padding: 5px; 
+		border:1px solid #999900; 
+		font-size: 16px;
+	}
+	#ul1 {
+		border:1px solid #999900; 
+		width: 310px; 
+		margin: 0;
+		padding: 0; 
+		display: none;
+	}
+	li a { 
+		line-height: 30px; 
+		padding: 5px; 
+		text-decoration: none; 
+		color: black; 
+		display: block;
+	}
+	li a:hover{ 
+		background: #f90; 
+		color: white; 
+	}
+</style>
+<script>
+	function abeng(data){//此函数是利用data来dosomething 即处理数据
+		//data就是创建的src的abeng（{}）括号内的内容 
+		var oUl=document.getElementById("ul1");
+		var html="";
+		if (data.s.length)
+		{
+			oUl.style.display="block";
+			for (var i=0;i<data.s.length;i++ )
+			{
+				html+="<li><a href='#'>"+data.s[i]+"</a></li>";
+			}
+			oUl.innerHTML=html;
+		}else{
+			oUl.style.display="none";
+		}
+
+	}
+</script>
+<script> //src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=55&cb=abeng"></script>
+<script>
+	window.onload=function(){
+		//逻辑 页面加载后 鼠标按下 如果有文字 则显示下拉列表
+		var cont=document.getElementById("q");
+		var oUl=document.getElementById("ul1");
+		cont.onkeyup=function(){
+			//alert(1);当鼠标抬起 自动添加
+			if (cont!="")
+			{
+				var oScript=document.createElement("script");
+				oScript.src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+this.value+"&cb=abeng";
+				document.body.appendChild(oScript);
+			}else{
+				oUl.style.display="none";
+			}
+
+		};
+	};
+
+</script>
+</head>
+<body>
+	<input type="text" id="q" />
+	<ul id="ul1"></ul>
+</body>
+</html>
